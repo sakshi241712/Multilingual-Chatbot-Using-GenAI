@@ -13,6 +13,13 @@ This project is a multilingual chatbot-powered website that supports Indian regi
 - Website hosted using GitHub Pages
 - Chatbot embedded using JavaScript
 
+## Technologies Used
+- HTML, CSS, JavaScript
+- Chatling
+- Generative AI (LLM)
+- GitHub Pages
+
+
 ## Deployment
 The website is deployed using GitHub Pages, and the chatbot is integrated using Chatling's embed script.
 

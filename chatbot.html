@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anuvaad | Chatbot</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #ff85a2; /* Your Princess Pink */
+            font-family: 'Montserrat', sans-serif;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* The Back to Home Button Styling */
+        .back-home-container {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+        }
+
+        .btn-back {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-back:hover {
+            color: #f06292; /* Royal Pink on hover */
+            transform: translateX(-5px);
+        }
+
+        /* Chatbot Container */
+        .chatbot-container {
+            width: 90%;
+            max-width: 900px;
+            height: 80vh;
+            background: white;
+            border-radius: 30px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+            padding: 20px;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="back-home-container">
+        <a href="index.html" class="btn-back">
+            <i class="fa-solid fa-arrow-left"></i> Back to Home
+        </a>
+    </div>
+
+    <div class="chatbot-container">
+        <div class="text-center mb-3">
+            <h2 style="color: #f06292; font-weight: 700;">Anuvaad AI</h2>
+            <p class="text-muted small">Indian Regional Language Assistant</p>
+        </div>
+
+        <div id="chatbot-mount-point" class="h-100 text-center pt-5">
+            <p>Your chatbot interface goes here.</p>
+        </div>
+        </div>
+
+</body>
+</html>

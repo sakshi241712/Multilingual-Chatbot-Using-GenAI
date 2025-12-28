@@ -25,7 +25,7 @@
             position: absolute;
             top: 20px;
             left: 20px;
-            z-index: 1001; /* Higher than the chat */
+            z-index: 1000;
         }
 
         .btn-back {
@@ -33,11 +33,9 @@
             text-decoration: none;
             font-weight: 600;
             padding: 10px 20px;
+            background: rgba(255, 255, 255, 0.2);
             border-radius: 50px;
-            background: rgba(0, 0, 0, 0.1);
-            backdrop-filter: blur(5px);
             transition: 0.3s;
-            border: 1px solid rgba(255, 255, 255, 0.3);
         }
 
         .btn-back:hover {
@@ -45,24 +43,22 @@
             color: #ff85a2;
         }
 
-        /* The Container for your Chatbot */
         .chat-rectangle {
-            width: 95%;
-            max-width: 440px; 
-            height: 85vh;
+            width: 440px; 
+            height: 650px;
+            max-width: 90%;
+            max-height: 85vh;
             background: white;
             border-radius: 25px;
             box-shadow: 0 20px 50px rgba(0,0,0,0.3);
             overflow: hidden;
             border: 4px solid white;
-            position: relative;
-            z-index: 1000;
         }
 
-        /* This ensures the Chatling widget fills the container */
-        #chatling-embed-container {
+        iframe {
             width: 100%;
             height: 100%;
+            border: none;
         }
     </style>
 </head>
@@ -70,20 +66,15 @@
 <body>
 
     <div class="back-home-container">
-        <a href="index.html" class="btn-back">← ফিরে যান (Back)</a>
+        <a href="index.html" class="btn-back">← ফিরে যান (Home)</a>
     </div>
 
     <div class="chat-rectangle">
-        <script>
-            window.chtlConfig = { 
-                chatbotId: "4123331553", 
-                display: "fullscreen",
-                targetId: "chatling-embed-container" /* Forces it inside the pink box */
-            };
-        </script>
-        <div id="chatling-embed-container"></div>
-        <script async data-id="4123331553" id="chtl-script" data-display="fullscreen" type="text/javascript" src="https://chatling.ai/js/embed.js"></script>
-        </div>
+        <iframe 
+            src="https://chatling.ai/chatbot-widget/4123331553?embed=true" 
+            allow="clipboard-write">
+        </iframe>
+    </div>
 
 </body>
 </html>

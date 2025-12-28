@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="bn">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -36,8 +36,8 @@
             border-radius: 50px;
             background: rgba(255, 255, 255, 0.2);
             backdrop-filter: blur(5px);
-            transition: 0.3s;
             border: 1px solid rgba(255, 255, 255, 0.3);
+            transition: 0.3s;
         }
 
         .btn-back:hover {
@@ -45,7 +45,7 @@
             color: #ff85a2;
         }
 
-        /* চ্যাটবটের উইন্ডো */
+        /* Responsive Floating Window */
         .chat-rectangle {
             width: 95%;
             max-width: 450px; 
@@ -59,11 +59,11 @@
             flex-direction: column;
         }
 
-        /* চ্যাটলিং ইনলাইন কন্টেইনার */
+        /* Inline Bot Container */
         #chtl-inline-bot {
-            flex-grow: 1;
             width: 100% !important;
             height: 100% !important;
+            flex-grow: 1;
         }
     </style>
 </head>
@@ -71,7 +71,7 @@
 <body>
 
     <div class="back-home-container">
-        <a href="index.html" class="btn-back">← ফিরে যান</a>
+        <a href="index.html" class="btn-back">← Back to Home</a>
     </div>
 
     <div class="chat-rectangle">

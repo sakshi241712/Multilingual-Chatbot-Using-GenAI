@@ -12,7 +12,7 @@
         body {
             margin: 0;
             padding: 0;
-            background-color: #ff85a2; /* Princess Pink */
+            background-color: #ff85a2;
             font-family: 'Montserrat', sans-serif;
             height: 100vh;
             display: flex;
@@ -34,8 +34,7 @@
             font-weight: 600;
             padding: 10px 20px;
             border-radius: 50px;
-            background: rgba(255, 255, 255, 0.2);
-            backdrop-filter: blur(5px);
+            background: rgba(0, 0, 0, 0.1);
             border: 1px solid rgba(255, 255, 255, 0.3);
             transition: 0.3s;
         }
@@ -45,29 +44,26 @@
             color: #ff85a2;
         }
 
-        /* Responsive Floating Window */
         .chat-rectangle {
             width: 95%;
             max-width: 450px; 
             height: 85vh;
-            background: white;
+            background: #ffffff; /* White background for the bot area */
             border-radius: 30px;
             box-shadow: 0 25px 50px rgba(0,0,0,0.3);
             overflow: hidden;
             border: 5px solid white;
-            display: flex;
-            flex-direction: column;
+            position: relative;
         }
 
-        /* Inline Bot Container */
+        /* Crucial: Ensure the container has an explicit height for the inline bot */
         #chtl-inline-bot {
             width: 100% !important;
             height: 100% !important;
-            flex-grow: 1;
+            min-height: 500px;
         }
     </style>
 </head>
-
 <body>
 
     <div class="back-home-container">
@@ -75,16 +71,17 @@
     </div>
 
     <div class="chat-rectangle">
+        <div id="chtl-inline-bot"></div>
+
         <script> 
             window.chtlConfig = { 
                 chatbotId: "9513692492", 
-                display: "page_inline" 
+                display: "page_inline",
+                containerId: "chtl-inline-bot"
             } 
         </script>
         
-        <div id="chtl-inline-bot"></div>
-        
-        <script async data-id="9513692492" data-display="page_inline" id="chtl-script" type="text/javascript" src="https://chatling.ai/js/embed.js"></script>
+        <script async data-id="9513692492" id="chtl-script" type="text/javascript" src="https://chatling.ai/js/embed.js"></script>
     </div>
 
 </body>

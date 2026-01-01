@@ -61,6 +61,28 @@
             transition: 0.3s;
         }
 
+        /* Help Button Styling */
+        .help-fab {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: var(--gradient-purple);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            cursor: pointer;
+            z-index: 1000;
+            transition: 0.3s;
+            border: none;
+        }
+        .help-fab:hover { transform: scale(1.1); color: white; }
+
         .feature-card {
             background: white; border-radius: 15px; padding: 30px; text-align: center;
             box-shadow: 0 10px 30px rgba(0,0,0,0.05); transition: transform 0.3s; height: 100%;
@@ -78,6 +100,42 @@
 </head>
 <body>
 
+    <button class="help-fab" data-bs-toggle="modal" data-bs-target="#helpModal" title="How to use Anuvaad">
+        <i class="fa-solid fa-question"></i>
+    </button>
+
+    <div class="modal fade" id="helpModal" tabindex="-1" aria-labelledby="helpModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content border-0 shadow-lg" style="border-radius: 20px;">
+                <div class="modal-header border-0 pb-0">
+                    <h3 class="modal-title w-100 text-center mt-3" id="helpModalLabel" style="color: var(--primary-purple);">Getting Started</h3>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-4">
+                    <div class="d-flex align-items-start mb-3">
+                        <div class="me-3 mt-1 text-primary"><i class="fa-solid fa-circle-1 fs-4" style="color: var(--primary-purple);"></i></div>
+                        <p class="mb-0 text-muted">Click the <strong>"Open Translator Chatbot"</strong> button to launch the conversation interface.</p>
+                    </div>
+                    <div class="d-flex align-items-start mb-3">
+                        <div class="me-3 mt-1 text-primary"><i class="fa-solid fa-circle-2 fs-4" style="color: var(--primary-purple);"></i></div>
+                        <p class="mb-0 text-muted">Select your <strong>Target Language</strong> from the dropdown menu in the chat.</p>
+                    </div>
+                    <div class="d-flex align-items-start mb-3">
+                        <div class="me-3 mt-1 text-primary"><i class="fa-solid fa-circle-3 fs-4" style="color: var(--primary-purple);"></i></div>
+                        <p class="mb-0 text-muted">Type your message or use the <strong>Microphone</strong> icon for voice-to-text translation.</p>
+                    </div>
+                    <div class="d-flex align-items-start">
+                        <div class="me-3 mt-1 text-primary"><i class="fa-solid fa-circle-4 fs-4" style="color: var(--primary-purple);"></i></div>
+                        <p class="mb-0 text-muted">The AI will instantly translate and read back the text in the selected regional language.</p>
+                    </div>
+                </div>
+                <div class="modal-footer border-0 justify-content-center pb-4">
+                    <button type="button" class="btn btn-modern px-5" data-bs-dismiss="modal">Got it!</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <nav class="navbar navbar-expand-lg sticky-top">
         <div class="container">
             <a class="navbar-brand brand-font" href="#"><i class="fa-solid fa-language me-2"></i>ANUVAAD</a>
@@ -88,7 +146,9 @@
         <div class="container text-center">
             <h1 class="display-3 mb-4">Bridging Voices, <span style="color: var(--primary-purple);">Connecting Bharat.</span></h1>
             <p class="lead mb-5 text-muted">Select any of the 22 official languages below to explore its heritage.</p>
-            <a href="chatbot.html" class="btn btn-modern shadow-lg">Open Translator Chatbot</a>
+            <div class="d-flex flex-column flex-md-row justify-content-center gap-3">
+                <a href="chatbot.html" class="btn btn-modern shadow-lg">Open Translator Chatbot</a>
+            </div>
         </div>
     </section>
 
@@ -148,6 +208,7 @@
         <p class="mb-0">© 2025 Anuvaad | Bridging the Language Gap</p>
     </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
         const languageData = {
             'Assamese': 'Assamese is the official language of Assam, spoken primarily in the Brahmaputra Valley. It has a rich tradition of literature dating back to the 13th century and uses a script similar to Bengali.',
@@ -182,7 +243,6 @@
             tags.forEach(t => t.classList.remove('active'));
             event.target.classList.add('active');
             
-            // Smooth scroll to info display on mobile
             if(window.innerWidth < 768) {
                 document.getElementById('info-display').scrollIntoView({ behavior: 'smooth' });
             }
